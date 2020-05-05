@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOS_Swift_SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5FR-Bu-vEj">
+                                <rect key="frame" x="16" y="166" width="343" height="307"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9V3-t6-8QN">
+                                <rect key="frame" x="64" y="110" width="245" height="29"/>
+                                <segments>
+                                    <segment title="English"/>
+                                    <segment title="Hindi"/>
+                                    <segment title="Arabic"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAct:" destination="BYZ-38-t0r" eventType="valueChanged" id="GMN-7b-VoZ"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfS-sc-90J">
+                                <rect key="frame" x="94" y="38" width="186" height="47"/>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.67843137249999996" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="xyy-6C-dky"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopAct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Hd-bd-PKL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5FR-Bu-vEj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0Os-l7-wBv"/>
+                            <constraint firstItem="wfS-sc-90J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="3WK-m1-aHI"/>
+                            <constraint firstItem="9V3-t6-8QN" firstAttribute="top" secondItem="wfS-sc-90J" secondAttribute="bottom" constant="25" id="9Dz-pP-TTL"/>
+                            <constraint firstItem="5FR-Bu-vEj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J1E-0z-wyX"/>
+                            <constraint firstItem="5FR-Bu-vEj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" constant="-93.199999999999989" id="K9D-us-yc9"/>
+                            <constraint firstItem="5FR-Bu-vEj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-16" id="bAi-sb-ojy"/>
+                            <constraint firstItem="wfS-sc-90J" firstAttribute="centerX" secondItem="5FR-Bu-vEj" secondAttribute="centerX" id="cqs-nA-Z3T"/>
+                            <constraint firstItem="wfS-sc-90J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="fxX-ie-cIF"/>
+                            <constraint firstItem="5FR-Bu-vEj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-14" id="pPg-sK-vVh"/>
+                            <constraint firstItem="wfS-sc-90J" firstAttribute="centerX" secondItem="9V3-t6-8QN" secondAttribute="centerX" id="zok-8E-sIy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentCtr" destination="9V3-t6-8QN" id="FdI-ao-4Bq"/>
+                        <outlet property="startStopBtn" destination="wfS-sc-90J" id="sF2-nd-N5E"/>
+                        <outlet property="textView" destination="5FR-Bu-vEj" id="Ahm-Gx-0Th"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562.39999999999998" y="90.404797601199405"/>
+        </scene>
+        <!--Speech Controller-->
+        <scene sceneID="TXY-S7-mth">
+            <objects>
+                <viewController id="hZR-Xm-j5O" customClass="SpeechController" customModule="IOS_Swift_SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2VV-bn-G04">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AY5-mc-Haa">
+                                <rect key="frame" x="136" y="148" width="87" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startSpeech:" destination="hZR-Xm-j5O" eventType="touchUpInside" id="SFz-Xg-gie"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lRn-Fb-Cq7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ymU-fA-n9M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dwN-pP-eNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480.80000000000001" y="76.911544227886068"/>
+        </scene>
+    </scenes>
+</document>
